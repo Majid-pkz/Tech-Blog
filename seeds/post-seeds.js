@@ -4,8 +4,8 @@ const { Post } = require('../models');
 const postData = [
   {
     title: 'chatGPT',
-    content: 'ChatGPT is a large language model developed by OpenAI, which is designed to generate human-like responses to natural language inputs. It uses a deep learning architecture called the transformer to process and generate text. ChatGPT has been trained on a massive dataset of text from the internet, books, and other sources to enable it to generate responses to a wide range of questions and statements. Its purpose is to simulate human-like conversation and provide helpful responses to users.',   
-    date: '',
+    content: 'ChatGPT is a large language model developed by OpenAI, which is designed .',   
+    // date: '',
     user_id: 1,  
   
   },
