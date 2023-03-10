@@ -1,13 +1,17 @@
 
 
-
+{{#each existingPost as |e|}}
 <div class="card">
-    <div>
-        <h5 class="card-header bg-info">Card Title</h5>
-        <span>posted at:</span>    
+  <div class="bg-success">
+    <div class="d-flex justify-content-between w-100" >
+        <h5 class="card-header ">{{e.title}}  </h5> <p > <span>posted by: {{e.user.firstName}} {{ e.createdAt}}  </span> </p>
+         
     </div>
-  <h5 class="card-header bg-info">Card Title</h5>
-  <div class="card-body">    
-    <p class="card-text">With supporting text below .</p>
+  </div>
+  <div class="card-body bg-info">    
+    <p class="card-text">{{e.content}} .</p>
   </div>
 </div>
+{{/each}}
+
+

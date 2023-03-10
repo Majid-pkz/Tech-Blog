@@ -1,8 +1,13 @@
 const router = require('express').Router();
-const something = require('./smethingRoutes');
+const homeRoutes = require('./homeRoutes');
+const postRoutes = require('./postRoutes');
+const dashboardRoutes = require('./dashboardRoutes')
 
 
-// router.use('/', ???);
+
+router.use('/', homeRoutes);
+// router.use('/dashboard', dashboardRoutes);
+// router.use('/posts', postRoutes);
 
 
 module.exports = router;
