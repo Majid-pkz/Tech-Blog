@@ -1,4 +1,4 @@
-const {Post } = require('../../models');
+const {Post,User } = require('../../models');
 const router = require('express').Router();
 
 router.get('/',  async (req, res) => {
@@ -26,10 +26,10 @@ router.get('/',  async (req, res) => {
 router.get('/newpost', (req, res) => {
   
     
-    if (!req.session.logged_in) {
-        res.redirect('/');
-        return;
-      }
+    // if (!req.session.logged_in) {
+    //     res.redirect('/');
+    //     return;
+    //   }
     
       res.render('newpost');
     });

@@ -21,6 +21,6 @@ var loginHandler = async () => {
     }
   }
 };
-document.getElementById('login-submit').addEventListener('click', loginHandler);
+document.getElementById('login-submit')?.addEventListener('click', loginHandler);
 
 
