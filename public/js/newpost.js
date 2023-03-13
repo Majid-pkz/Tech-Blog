@@ -9,7 +9,7 @@ const newPostHandler = async () => {
   
     
     if (title&& content) {
-       const response = await fetch('/api/posts', {
+       const response = await fetch('/api/posts/', {
           method: 'POST',
           body: JSON.stringify({ title, content }),
           headers: { 'Content-Type': 'application/json' },
@@ -18,7 +18,7 @@ const newPostHandler = async () => {
         if (response.ok) {
           console.log(title);
           console.log(content);
-          document.location.replace('/');
+          // document.location.replace('/');
         } else {
           alert('Failed to sign up.');       }
    

@@ -31,7 +31,7 @@ router.get('/newpost', (req, res) => {
     //     return;
     //   }
     
-      res.render('newpost');
+      res.render('newpost',{logged_in: req.session.logged_in} );
     });
 
 
