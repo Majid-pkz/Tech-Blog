@@ -6,10 +6,11 @@ const newPostHandler = async () => {
   
     // Get the value of the "Content" input
     var content = document.getElementById("myContent").value;
+    
   
     
     if (title&& content) {
-       const response = await fetch('/api/posts/', {
+       const response = await fetch('/api/posts', {
           method: 'POST',
           body: JSON.stringify({ title, content }),
           headers: { 'Content-Type': 'application/json' },
