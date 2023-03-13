@@ -1,0 +1,12 @@
+.box{
+    width: auto;
+    border-radius: 5%;
+    background-color: aquamarine;
+    border-style: solid;
+    box-shadow: inset;
+    align-items:start;
+}
+
+.div-box{
+    justify-content: left;
+}

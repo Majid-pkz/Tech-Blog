@@ -4,7 +4,7 @@
 <div class="card">
   <div class="bg-success">
     <div class="d-flex justify-content-between w-100" >
-        <h5 class="card-header ">{{e.title}}  </h5> <p > <span>posted by: {{e.user.firstName}} {{ e.createdAt}}  </span> </p>
+        <h5 class="card-header ">{{e.title}}  </h5> <p > <span>posted by: {{e.user.username}} {{ e.createdAt}}  </span> </p>
          
     </div>
   </div>
@@ -14,4 +14,10 @@
 </div>
 {{/each}}
 
-
+ <div>
+       {{#if req.session.logged_in}}
+        <p>You are signed-in</p>
+      {{else}}
+        <p>You are not signed-in</p>
+      {{/if}} 
+    </div>

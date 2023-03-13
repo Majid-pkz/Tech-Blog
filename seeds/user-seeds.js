@@ -4,30 +4,21 @@ const bcrypt = require('bcrypt');
 
 const userData = [
   {
-    firstName: 'Alex',
-    lastName:'Fergosen',
+    username: 'Alex',    
     email:'alex@gmail.com',
     password:`${bcrypt.hashSync("Alex12345", 10)}`,        
   },
   {
-    firstName: 'Peter',
-    lastName:'Jackson',
+    username: 'Peter',    
     email:'gb@gov.com',
     password:`${bcrypt.hashSync("Covid19news", 10)}`,
   },
   {
-    firstName: 'Rahat',
-    lastName:'saini',
+    username: 'Rahat',    
     email:'rs@abc.com',
     password:`${bcrypt.hashSync('pass12345', 10)}`,
   },
-  {
-    firstName: 'AAA',
-    lastName:'BBB',
-    email:'AB@abc.com',
-    password:`${bcrypt.hashSync('pass12345', 10)}`,      
-  },
-
+ 
 ];
 
 const seedUser = () => User.bulkCreate(userData);
