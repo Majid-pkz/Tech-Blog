@@ -1,26 +1,48 @@
+const { where } = require('sequelize');
 const {Post,User } = require('../../models');
 const router = require('express').Router();
 
-router.get('/',  async (req, res) => {
-    // find all existing posts  
-    try {
-        const postData = await Post.findAll(
-            {
-                include: [{ model: User }],
-            }
+// router.get('/',  async (req, res) => {
+//     // find users posts  
+//     //Post.user_id= req.session.user_id
+//     try {
+//         const postData = await Post.findAll(
+           
+//             {
+//                 where: user_id= req.session.user_id
+
+//             }
 
 
-        );
-        const existingPost = postData.map((post) => post.get({ plain: true }));
-        res.render('homepage',{existingPost, logged_in: req.session.logged_in });
+//         );
+//         const myPost = postData.map((post) => post.get({ plain: true }));
+//         res.render('dashboard',{mypostPost, logged_in: req.session.logged_in });
       
-    } 
-    catch (err) {
-        res.status(500).json(err);
-        console.log(err)
-    }
-});
+//     } 
+//     catch (err) {
+//         res.status(500).json(err);
+//         console.log(err)
+//     }
+// });
+router.get('/', async (req, res) => {
+    // find user's posts
+    try {
+      const postData = await Post.findAll(
+        {
+            include:{model:User},
+        where: { user_id: req.session.user_id },
 
+        },
+    
+      );
+  console.log(`to print postdata before sending to map : ${postData}`)
+      const myPosts = postData.map((post) => post.get({ plain: true }));
+      res.render('dashboard', { myPosts, logged_in: req.session.logged_in });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
 
 
 router.get('/newpost', (req, res) => {
