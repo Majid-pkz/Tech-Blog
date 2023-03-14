@@ -1,9 +1,26 @@
-<div>
 
-<h2>This is dashboard for test</h2>
+<div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+  Dashboard
+</div>
+
+
+{{#each myPosts as |e|}}
+<div class="card">
+  <div class="bg-warning">
+    <div class="d-flex justify-content-between w-100" >
+        <h5 class="card-header ">{{e.title}}  </h5> <p > <span>posted by: {{e.user.username}} {{ formatDate e.createdAt}}  </span> </p>
+        
+         
+    </div>
+  </div>
+  <div class="card-body bg-info">    
+    <p class="card-text">{{e.content}} .</p>
+  </div>
+</div>
+{{/each}}
+<div>
    <a href="/api/dashboard/newpost" class="btn btn-primary">Add new Post</a>
 </div>
 
 
-
-<script src="./js/newpost.js"></script>
+{{!-- <script src="./js/newpost.js"></script> --}}
