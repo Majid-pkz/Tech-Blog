@@ -1,5 +1,5 @@
 const logout = async () => {
-  console.log('hi')
+  console.log('button is responsive')
     const response = await fetch('/api/users/sign-out', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
