@@ -1,6 +1,6 @@
 
-<div class="card">
-  <div class="bg-warning">
+<div class="card  ">
+  <div class="text-bg-dark ">
     <div class="d-flex justify-content-between w-100" >
         <h5 class="card-header ">{{title}}  </h5> <p > <span>posted by: {{user.username}} 
             {{ formatDate e.createdAt}}  </span> </p>
@@ -8,10 +8,31 @@
          
     </div>
   </div>
-  <div class="card-body bg-info">    
+  <div class="card-body text-bg-success">    
     <p class="card-text">{{content}} .</p>
   </div>
 </div>
+
+
+
+
+
+
+{{#each comments as |e|}}
+<div class="card">
+  <div class="text-bg-info">
+    <div class="d-flex justify-content-between w-100" >
+        <h5 class="card-header ">{{e.content}}  </h5> <p > <span>posted by: {{e.user.username}} {{ formatDate e.createdAt}}  </span> </p>
+        
+         
+    </div>
+  </div>
+</div>
+{{/each}}
+
+
+
+
 <div class="card">
   <div class="bg-warning">
     <div class="d-flex justify-content-between w-100" >
@@ -25,21 +46,8 @@
   <textarea class="form-control" data-id="{{id}}" id="text-area" rows="3"></textarea>
 </div>
 </div>
-
 <div>
     <button id="comment" type="button" class="btn btn-secondary btn-lg">submit comment</button>   
 </div>
-
-{{#each comments as |e|}}
-<div class="card">
-  <div class="bg-warning">
-    <div class="d-flex justify-content-between w-100" >
-        <h5 class="card-header ">{{e.content}}  </h5> <p > <span>posted by: {{e.user.username}} {{ formatDate e.createdAt}}  </span> </p>
-        
-         
-    </div>
-  </div>
-</div>
-{{/each}}
 
 <script src="/js/comment.js"></script>
