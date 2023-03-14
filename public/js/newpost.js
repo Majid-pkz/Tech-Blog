@@ -1,4 +1,4 @@
-
+// const formattedDate = moment(job.posted_date.format('YYYY-MM-DD HH:mm:ss'));
 const newPostHandler = async () => {
 
     // Get the value of the "Title" input

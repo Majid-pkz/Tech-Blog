@@ -1,4 +1,4 @@
-// const moment = require('moment');
+ const moment = require('moment');
 const { Post } = require('../models');
 
 const postData = [
@@ -6,8 +6,8 @@ const postData = [
     title: 'chatGPT',
     content: 'ChatGPT is a large language model developed by OpenAI, which is designed .',   
     // date: '',
-    user_id: 1,  
-  
+    user_id: 1,
+        
   },
 
   // {
