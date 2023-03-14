@@ -5,19 +5,22 @@ const { Comment } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     const commentData = await Comment.create({
-    //   content: req.body,
-    //   user_id: req.body,
-    //   post_id: req.body,
+      content: req.body.content,
+      user_id: req.session.user_id,
+      post_id: req.body.post_id
     });
 
     // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
       req.session.loggedIn = true;
 
-      res.status(200).json(dbUserData);
+      res.status(200).json(commentData);
     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+
+module.exports=router;
