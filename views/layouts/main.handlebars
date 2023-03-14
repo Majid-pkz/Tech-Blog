@@ -31,18 +31,23 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ">
-        <a class="nav-link text-white active" aria-current="page" href="/">Home</a>       
+               
 
-     
-            <a class="nav-link  text-white" href="#">Dashboard</a>
-            <a id="login-btn" class="nav-link text-white" href="/login">Login</a>
-             <button id="logout-btn" class="btn-no-style ">Logout</button> 
+            {{#if logged_in}}
+              <a class="nav-link text-white active" aria-current="page" href="/">Home</a> 
+                <a class="nav-link  text-white" href="api/dashboard">Dashboard</a>
+                 <button id="logout-btn" class="btn-no-style ">Logout</button>         
 
-        
+            {{else}}
+            <a class="nav-link text-white active" aria-current="page" href="/">Home</a> 
+
+            <a id="login-btn" class="nav-link text-white" href="/login">Login</a>             
+
+           {{/if}}
       </div>
     </div>   
   </div>
-   <div class="flex div-box"> <p class="box">The Tech Blog</p> </div>
+   
 </nav>     
 
 
@@ -52,7 +57,7 @@
 
          
           <script src="/js/logout.js"></script>
-          <script src="/js/login.js"></script>
+          {{!-- <script src="/js/login.js"></script> --}}
           
 
         
@@ -62,6 +67,14 @@
 
 
         <footer>
+          
+             {{!-- <div>
+              {{#if logged_in}}
+                <p>You are signed-in</p>
+              {{else}}
+                <p>You are not signed-in</p>
+              {{/if}} 
+            </div> --}}
 
         </footer>
 
