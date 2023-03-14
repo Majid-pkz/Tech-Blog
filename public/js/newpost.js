@@ -26,12 +26,4 @@ const newPostHandler = async () => {
     
   }
 };
-  
-  
- 
-
-  
-
-
-
 document.getElementById("create").addEventListener("click", newPostHandler)
