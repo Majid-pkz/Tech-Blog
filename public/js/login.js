@@ -15,9 +15,10 @@ var loginHandler = async () => {
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/dashboard');
+      document.location.replace('api/dashboard');
     } else {
-      alert(response.statusText);
+      
+       alert(response.statusText);
     }
   }
 };
