@@ -1,3 +1,10 @@
+
+
+body{
+    background-color: #c6dcf0!important; 
+
+  }
+  
 .box{
     width: auto;
     border-radius: 5%;
@@ -7,6 +14,37 @@
     align-items:start;
 }
 
-.div-box{
+#nav-box{
     justify-content: left;
+    border-radius: 10%;
+    max-width:fit-content;
+    padding: 10px;
+    
+    background-color: brown;
+    font-weight: bold;
+    font-size:large;
 }
+#second-nav{
+    margin-left: -8px;
+    margin-top: -8px;
+    margin-right: -8px;
+}
+.shadow-box {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 20);
+  }
+  
+.my-button {
+    border: none;
+    margin-left: 20px;
+  }
+  .line-space{
+    margin-top: 20px;
+  }
+  .card-length{
+    max-width: 90%;
+    margin-left: 5%;
+    margin-top: 4px;
+  }
+  .creator-p{
+    margin-right: 15px;
+  }
