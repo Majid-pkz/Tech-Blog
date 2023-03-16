@@ -82,8 +82,8 @@ router.get('/posts/:id',async(req, res) => {
     res.render('post', {
         ...singlePost,
         comments,
-        //  replace true with   req.session.logged_in
-        logged_in: true
+        //  replace true with   
+        logged_in: req.session.logged_in
       });
 
      

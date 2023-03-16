@@ -8,12 +8,17 @@
    
 </nav> 
 
+<a href="/bolbol"> test kossjer</a>
+
 
 {{#each myPosts as |e|}}
 <div class="card">
   <div class="bg-warning">
     <div class="d-flex justify-content-between w-100" >
-        <h5 class="card-header ">{{e.title}}  </h5> <p > <span>posted by: {{e.user.username}} {{ formatDate e.createdAt}}  </span> </p>
+      <a class="text-decoration-none" href="/api/edit/{{e.id}}">  <h5 class="card-header ">{{e.title}}  </h5> </a>
+       
+        
+        <p > <span>posted by: {{e.user.username}} {{ formatDate e.createdAt}}  </span> </p>
         
          
     </div>

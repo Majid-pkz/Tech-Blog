@@ -2,17 +2,18 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 // CREATE new user
-router.post('/', async (req, res) => {
+router.post('/sign-up', async (req, res) => {
   try {
     const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
-
+console.log(`user_id when signing-up is ${dbUserData.id}`)
     // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.user_id = dbUserData.id;
+      // req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
     });
@@ -62,6 +63,14 @@ router.post('/login', async (req, res) => {
     res.status(500).json(err);
   }
 });
+//sign up
+
+
+
+
+
+
+
 
 // Logout
 router.post('/sign-out', (req, res) => {

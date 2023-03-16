@@ -48,3 +48,11 @@ body{
   .creator-p{
     margin-right: 15px;
   }
+  .link-text{
+    font-weight: bold;
+    font-size:large;
+    text-decoration:none;
+  }
+  .text-area-border{
+    border-style: solid 2px blue;
+  }
