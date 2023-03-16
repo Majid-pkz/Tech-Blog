@@ -24,23 +24,23 @@ router.get(`/:id`, async (req, res) => {
   }
 });
 
-//  forgot why?
-// router.post('/', async (req, res) => {
+ 
+router.post('/', async (req, res) => {
     
-//   console.log(`this is req.session. user_id: ${req.session.user_id}`)
-//     try {
-//       const postData = await Post.create({         
-//         content: req.body.content,
-//         title: req.body.title,
-//         user_id: req.session.user_id });
-//     //   const existingPost = postData.map((post) => post.get({ plain: true }));
-//     res.json(postData);
-//       res.render('homepage');
+  console.log(`this is req.session. user_id: ${req.session.user_id}`)
+    try {
+      const postData = await Post.create({         
+        content: req.body.content,
+        title: req.body.title,
+        user_id: req.session.user_id });
+    //   const existingPost = postData.map((post) => post.get({ plain: true }));
+    res.json(postData);
+      res.render('homepage');
    
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 
 
