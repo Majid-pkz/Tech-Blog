@@ -21,9 +21,11 @@ const newPostHandler = async () => {
           console.log(content);
            document.location.replace('/api/dashboard');
         } else {
-          alert('Failed to create a post.');       }
+
+          // alert('Failed to create a post.');    
+          }
    
     
   }
 };
-document.getElementById("create").addEventListener("click", newPostHandler)
+document.getElementById("create")?.addEventListener("click", newPostHandler)
