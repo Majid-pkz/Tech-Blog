@@ -35,7 +35,7 @@
 
             {{#if logged_in}}
               <a class="nav-link text-white active" aria-current="page" href="/">Home</a> 
-                <a class="nav-link  text-white" href="api/dashboard">Dashboard</a>
+                <a class="nav-link  text-white" href="api/dashboard/{{user_id}}">Dashboard</a>
                  <button id="logout-btn" class="my-button text-bg-secondary ">Logout</button>         
 
             {{else}}
