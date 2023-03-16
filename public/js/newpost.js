@@ -19,7 +19,7 @@ const newPostHandler = async () => {
         if (response.ok) {
           console.log(title);
           console.log(content);
-           document.location.replace('/api/dashboard');
+           document.location.replace('/');
         } else {
           alert('Failed to create a post.');       }
    
