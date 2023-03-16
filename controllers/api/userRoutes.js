@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// CREATE new user
+// CREATE new user  //sign up
 
 router.post('/sign-up', async (req, res) => {
   try {
@@ -48,8 +48,7 @@ router.post('/login', async (req, res) => {
     // Once the user successfully logs in, set up the sessions variable 'loggedIn'
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
-      req.session.logged_in = true;
-      console.log("trueeeeeeeeeeeeee")
+      req.session.logged_in = true;    
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
    
@@ -59,15 +58,6 @@ router.post('/login', async (req, res) => {
     res.status(500).json(err);
   }
 });
-//sign up
-
-
-
-
-
-
-
-
 // Logout
 router.post('/sign-out', (req, res) => {
   console.log("logging out")

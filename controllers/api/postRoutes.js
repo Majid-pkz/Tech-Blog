@@ -13,9 +13,8 @@ router.get(`/:id`, async (req, res) => {
       const singlePost = postData.get({ plain: true });
       res.render('post', {
           ...singlePost,
-
-          //  replace true with   req.session.logged_in
-          logged_in: true
+         
+          logged_in: req.session.logged_in
         });
 
        res.status(200).json(postData);
@@ -25,38 +24,23 @@ router.get(`/:id`, async (req, res) => {
   }
 });
 
-
-
-
-
-
-
-
+//  forgot why?
 // router.post('/', async (req, res) => {
-//     try {
-//         const postData = await Post.create(req.body);
-//         res.status(200).json(postData);
-//     } catch (err) {
-//         res.status(400).json(err);
-//     }
-// });
-
-router.post('/', async (req, res) => {
     
-  console.log(`this is req.session. user_id: ${req.session.user_id}`)
-    try {
-      const postData = await Post.create({         
-        content: req.body.content,
-        title: req.body.title,
-        user_id: req.session.user_id });
-    //   const existingPost = postData.map((post) => post.get({ plain: true }));
-    res.json(postData);
-      res.render('homepage');
+//   console.log(`this is req.session. user_id: ${req.session.user_id}`)
+//     try {
+//       const postData = await Post.create({         
+//         content: req.body.content,
+//         title: req.body.title,
+//         user_id: req.session.user_id });
+//     //   const existingPost = postData.map((post) => post.get({ plain: true }));
+//     res.json(postData);
+//       res.render('homepage');
    
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
 
 

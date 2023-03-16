@@ -1,5 +1,5 @@
 const updatePostHandler = async () => {
-  console.log('updatinggggg')
+ 
     // Get the value of the "Title" input
     var title = document.getElementById("myTitle").value;
   

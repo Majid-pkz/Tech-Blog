@@ -12,9 +12,11 @@ router.post('/', async (req, res) => {
 
     // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
-      req.session.loggedIn = true;
 
+      if (req.session.logged_in){
       res.status(200).json(commentData);
+      }
+
     });
   } catch (err) {
     console.log(err);

@@ -9,13 +9,18 @@ const userData = [
     password:`${bcrypt.hashSync("Alex12345", 10)}`,        
   },
   {
-    username: 'Peter',    
-    email:'gb@gov.com',
-    password:`${bcrypt.hashSync("Covid19news", 10)}`,
+    username: 'Sam',    
+    email:'Sam@s.com',
+    password:`${bcrypt.hashSync("pass12345", 10)}`,
   },
   {
-    username: 'Rahat',    
-    email:'rs@abc.com',
+    username: 'Ash',    
+    email:'ash@w.com',
+    password:`${bcrypt.hashSync('pass12345', 10)}`,
+  },
+  {
+    username: 'Bob',    
+    email:'bob@job.com',
     password:`${bcrypt.hashSync('pass12345', 10)}`,
   },
  

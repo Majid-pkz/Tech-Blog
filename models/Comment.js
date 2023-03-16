@@ -18,10 +18,7 @@ Comment.init(
             type: DataTypes.STRING,
             allowNull: true,
         },
-        // date:{
-        //     type: DataTypes.DATE, 
-        //     defaultValue: DataTypes.NOW
-        // },
+       
         user_id: {
             type: DataTypes.INTEGER,
             references: {

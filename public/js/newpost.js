@@ -1,4 +1,4 @@
-// const formattedDate = moment(job.posted_date.format('YYYY-MM-DD HH:mm:ss'));
+
 const newPostHandler = async () => {
 
     // Get the value of the "Title" input
@@ -21,7 +21,7 @@ const newPostHandler = async () => {
           console.log(content);
            document.location.replace('/api/dashboard');
         } else {
-          alert('Failed to sign up.');       }
+          alert('Failed to create a post.');       }
    
     
   }

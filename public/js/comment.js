@@ -1,5 +1,5 @@
 // replace with newComsHandler
-const newPostHandler = async () => {
+const newComsHandler = async () => {
 
    
     
@@ -25,4 +25,4 @@ const newPostHandler = async () => {
     
   }
 };
-document.getElementById("comment").addEventListener("click", newPostHandler)
+document.getElementById("comment").addEventListener("click", newComsHandler)

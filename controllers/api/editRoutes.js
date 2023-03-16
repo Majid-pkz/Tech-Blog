@@ -13,8 +13,7 @@ router.get(`/:id`, async (req, res) => {
       const singlePost = postData.get({ plain: true });
       res.render('edit', {
           ...singlePost,
-
-          //  replace true with   req.session.logged_in
+      
           logged_in: req.session.logged_in
         });
 

@@ -25,7 +25,7 @@ router.get('/',  async (req, res) => {
 
 
 // Use withAuth middleware to prevent access to route
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard',withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -82,7 +82,7 @@ router.get('/posts/:id',async(req, res) => {
     res.render('post', {
         ...singlePost,
         comments,
-        //  replace true with   
+         
         logged_in: req.session.logged_in
       });
 
@@ -93,93 +93,5 @@ router.get('/posts/:id',async(req, res) => {
     
 }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Login
-// router.post('/login', async (req, res) => {
-//   try {
-//     const dbUserData = await User.findOne({
-//       where: {
-//         email: req.body.email,
-//       },
-//     });
-
-//     if (!dbUserData) {
-//       res
-//         .status(400)
-//         .json({ message: 'Incorrect email or password. Please try again!' });
-//       return;
-//     }
-//     console.log(dbUserData)
-
-//     const validPassword = await dbUserData.checkPassword(req.body.password);
-
-//     if (!validPassword) {
-//       res
-//         .status(400)
-//         .json({ message: 'Incorrect email or password. Please try again!' });
-//       return;
-//     }
-//     console.log("upto here password validated")
-
-//     // Once the user successfully logs in, set up the sessions variable 'loggedIn'
-//     req.session.save(() => {
-//       req.session.user_id = dbUserData.id;
-//       req.session.loggedIn = true;
-//       console.log("trueeeeeeeeeeeeee")
-
-//       res.json({ user: dbUserData, message: 'You are now logged in!' });
-   
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
-// // sign-in route
-// router.get('/dashboard',  withAuth,(req, res) => {
-//     // If the user is already logged in, redirect to the homepage
-//     if (req.session.loggedIn) {
-//       res.redirect('/');
-//       return;
-//     }
-//     // Otherwise, render the 'login' template
-//     res.render('login');
-//   });
-
-  
-//   // sign-up route
-// router.get('/sign-up', (req, res) => {
-//     // If the user is already logged in, redirect to the homepage
-//     if (req.session.loggedIn) {
-//       res.redirect('/');
-//       return;
-//     }
-//     // Otherwise, render the 'login' template
-//     res.render('sign-up');
-//   });
 
 module.exports = router;
