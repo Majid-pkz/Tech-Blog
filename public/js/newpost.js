@@ -21,7 +21,7 @@ const newPostHandler = async () => {
               
         }
          else {
-          // alert('Failed to create a post.');    
+           
           }
     
   }
