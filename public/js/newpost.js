@@ -15,14 +15,15 @@ const newPostHandler = async () => {
           body: JSON.stringify({ title, content }),
           headers: { 'Content-Type': 'application/json' },
         });
-        if(!response.ok) {
-          alert('Failed to create a post.');   
-        }      
-           
-        
+
+        document.location.replace('/api/dashboard');   
+        if(response.ok) {
+              
+        }
          else {
-          document.location.replace('/api/dashboard'); 
-          }    
+          // alert('Failed to create a post.');    
+          }
+    
   }
 };
 document.getElementById("create")?.addEventListener("click", newPostHandler)
