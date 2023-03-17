@@ -16,15 +16,15 @@ const newPostHandler = async () => {
           headers: { 'Content-Type': 'application/json' },
         });
 
-        document.location.replace('/api/dashboard');
+       
    
         if (response.ok) {
-         
+         document.location.replace('/api/dashboard');
           
         }
          else {
 
-          // alert('Failed to create a post.');    
+          alert('Failed to create a post.');    
           }
    
     
