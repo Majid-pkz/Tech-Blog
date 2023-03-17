@@ -15,10 +15,12 @@ const newPostHandler = async () => {
           body: JSON.stringify({ title, content }),
           headers: { 'Content-Type': 'application/json' },
         });
+
+        document.location.replace('/api/dashboard');
    
         if (response.ok) {
          
-           document.location.replace('/api/dashboard');
+          
         }
          else {
 
