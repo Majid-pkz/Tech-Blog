@@ -9,13 +9,13 @@ const newPostHandler = async () => {
     
   
     
-    if (title&& content) {
+    if (title && content) {
        const response = await fetch('/api/posts', {
           method: 'POST',
           body: JSON.stringify({ title, content }),
           headers: { 'Content-Type': 'application/json' },
         });
-    console.log(response);
+   
         if (response.ok) {
          
            document.location.replace('/api/dashboard');
