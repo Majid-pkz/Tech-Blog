@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
         title: req.body.title,
         user_id: req.session.user_id });
       // const existingPost = postData.map((post) => post.get({ plain: true }));
-    res.json(postData);
+ res.status(200).json(postData);
       res.render('dashboard');
    
     } catch (err) {

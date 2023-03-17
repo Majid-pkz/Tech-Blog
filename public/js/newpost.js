@@ -18,16 +18,12 @@ const newPostHandler = async () => {
 
        
    
-        if (response.ok) {
-         document.location.replace('/api/dashboard');
-          
+        if(response.ok) {
+         document.location.replace('/api/dashboard');          
         }
          else {
-
           alert('Failed to create a post.');    
-          }
-   
-    
+          }    
   }
 };
 document.getElementById("create")?.addEventListener("click", newPostHandler)
