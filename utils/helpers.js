@@ -1,30 +1,19 @@
 const Handlebars = require('handlebars');
 const moment = require('moment');
 
-Handlebars.registerHelper('formatDate', function(date) {
-  return  moment().format('DD/MM/YYYY')
-});
+Handlebars.registerHelper('formatDate', (dateString)=> {
+  // Convert the date string to a Date object
+  const date = new Date(dateString);
 
-// module.exports = {
-//   format_date: (date) => {
-//     // Format date as MM/DD/YYYY
-//     return date.toLocaleDateString();
-//   },
-//   format_amount: (amount) => {
-//     // format large numbers with commas
-//     return parseInt(amount).toLocaleString();
-//   },
-//   get_emoji: () => {
-//     const randomNum = Math.random();
+  // Extract the day, month, and year from the Date object
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const year = date.getFullYear().toString();
 
-//     // Return a random emoji
-//     if (randomNum > 0.7) {
-//       return `<span for="img" aria-label="lightbulb">💡</span>`;
-//     } else if (randomNum > 0.4) {
-//       return `<span for="img" aria-label="laptop">💻</span>`;
-//     } else {
-//       return `<span for="img" aria-label="gear">⚙️</span>`;
-//     }
-//   },
-// };
+  // Construct the formatted date string
+  const formattedDate = `${day}/${month}/${year}`;
 
+  // Return the formatted date string
+  return formattedDate;
+}
+)
