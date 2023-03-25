@@ -68,25 +68,28 @@ router.get('/sign-up', (req, res) => {
 
 router.get('/posts/:id',async(req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id);
-    const commentData = await Comment.findAll({
-      where:{
-        post_id: req.params.id
-      },
-      include: [{ model: User }],
-    })
-     
-    const comments = commentData.map((post) => post.get({ plain: true }));
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        { model: User, attributes: ['username'] }, {model:Comment}
+        // User,
+        // {
+        //   model: Comment,
+        //   include: [User],
+        // },
+      ],
+    });
+   
+    // const comments = commentData.map((post) => post.get({ plain: true }));
 
     const singlePost = postData.get({ plain: true });
     res.render('post', {
         ...singlePost,
-        comments,
+        // comments,
          
         logged_in: req.session.logged_in
       });
-
-     
+      
+      res.status(200).json(postData);
 } catch (err) {
   console.log(err);
     res.status(500).json(err);

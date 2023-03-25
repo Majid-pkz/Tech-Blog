@@ -15,8 +15,7 @@ router.get(`/:id`, async (req, res) => {
           include: [{ model: User}]
         }  
                
-        );
-    
+        );   
 
       const singlePost = postData.get({ plain: true });
       res.render('post', {
@@ -24,7 +23,7 @@ router.get(`/:id`, async (req, res) => {
          
           logged_in: req.session.logged_in
         });
-        console.log(singlePost)
+      
 
         res.status(200).json(postData);
   } catch (err) {
