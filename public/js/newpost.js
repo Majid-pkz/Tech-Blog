@@ -16,9 +16,9 @@ const newPostHandler = async () => {
           headers: { 'Content-Type': 'application/json' },
         });
 
-        document.location.replace('/api/dashboard');   
+        document.location.replace('/api/dashboard'); 
         if(response.ok) {
-              
+            
         }
          else {
            

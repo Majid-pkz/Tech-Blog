@@ -35,7 +35,7 @@
 
             {{#if logged_in}}
               <a class="nav-link text-white active" aria-current="page" href="/">Home</a> 
-                <a class="nav-link  text-white" href="api/dashboard/{{user_id}}">Dashboard</a>
+                <a id="dash-link" class="nav-link  text-white active " href="#">Dashboard</a>
                  <button id="logout-btn" class="my-button text-bg-secondary ">Logout</button>         
 
             {{else}}
@@ -55,7 +55,7 @@
           <div class="body-text p-2">{{{body}}}</div> 
         </main>
 
-         
+         <script src="/js/dash.js"></script>
           <script src="/js/logout.js"></script>
           {{!-- <script src="/js/login.js"></script> --}}  
 
