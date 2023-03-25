@@ -1,4 +1,5 @@
 const { Post } = require('../../models');
+const { User } = require('../../models');
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 
@@ -8,7 +9,14 @@ router.get(`/:id`, async (req, res) => {
   // find a single post by `id`
   
   try {
-      const postData = await Post.findByPk(req.params.id);
+      const postData = await Post.findByPk(req.params.id,
+
+        {
+          include: [{ model: User}]
+        }  
+               
+        );
+    
 
       const singlePost = postData.get({ plain: true });
       res.render('post', {
@@ -16,8 +24,9 @@ router.get(`/:id`, async (req, res) => {
          
           logged_in: req.session.logged_in
         });
+        console.log(singlePost)
 
-       res.status(200).json(postData);
+      //  res.status(200).json(postData);
   } catch (err) {
       res.status(500).json(err);
       console.log(err);
