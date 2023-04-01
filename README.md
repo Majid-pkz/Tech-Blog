@@ -11,7 +11,7 @@
 ## Table of Contents
 
 * [Installation](#installation)
-* [Contributing](#contrubuting)
+* [Contributing](#contributing)
 * [License](#license)
 * [Demo](#demo)
 
